@@ -4,14 +4,14 @@
     <div class="loginForm">
       <label for>
         ユーザー名
-        <input type="text" v-model="username">
+        <input type="text" v-model="username" />
       </label>
-      <br>
+      <br />
       <label for>
         パスワード
-        <input type="password" v-model="password">
+        <input type="password" v-model="password" />
       </label>
-      <br>
+      <br />
       <button @click="login()">ログイン</button>
     </div>
     <p class="response">{{ responseMessage }}</p>
@@ -33,7 +33,7 @@ export default {
   methods: {
     login() {
       axios
-        .post("http://150.95.157.67:10901/login", {
+        .post("https://150.95.157.67:10901/login", {
           username: this.username,
           password: this.password
         })

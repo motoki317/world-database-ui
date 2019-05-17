@@ -3,7 +3,7 @@ module.exports = {
   devServer: {
     proxy: {
       "^/api": {
-        target: "http://150.95.157.67:10901", // 自分のポートにする
+        target: "https://150.95.157.67:10901", // 自分のポートにする
         pathRewrite: {
           "^/api/": "/"
         }
