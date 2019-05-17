@@ -44,7 +44,9 @@ export default {
   },
   mounted() {
     axios
-      .get("/api/country/" + this.$route.params.countryName)
+      .get(
+        "http://150.95.157.67:10901/country/" + this.$route.params.countryName
+      )
       .then(response => {
         this.country = response.data.country;
       })
@@ -52,7 +54,10 @@ export default {
         console.error(error);
       });
     axios
-      .get("/api/citiesInCountry/" + this.$route.params.countryName)
+      .get(
+        "http://150.95.157.67:10901/citiesInCountry/" +
+          this.$route.params.countryName
+      )
       .then(response => {
         this.cities = response.data.cities;
       })
