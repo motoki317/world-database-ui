@@ -3,9 +3,9 @@
     <div class="country-container">
       <div v-for="country in countries" :key="country.name">
         <div class="country">
-          <router-link :to="'/country/' + country.name">
-            {{ country.name }}
-          </router-link>
+          <router-link :to="'/country/' + country.name">{{
+            country.name
+          }}</router-link>
         </div>
       </div>
     </div>
@@ -24,7 +24,7 @@ export default {
   mounted() {
     // ロード時に実行する関数
     axios
-      .get("http://150.95.157.67:10901/countries")
+      .get("https://150.95.157.67:10901/countries")
       .then(res => {
         this.countries = res.data.countries;
       })

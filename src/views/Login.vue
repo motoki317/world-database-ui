@@ -33,7 +33,7 @@ export default {
   methods: {
     login() {
       axios
-        .post("http://150.95.157.67:10901/login", {
+        .post("https://150.95.157.67:10901/login", {
           username: this.username,
           password: this.password
         })

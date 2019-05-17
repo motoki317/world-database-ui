@@ -4,13 +4,13 @@
       <h2>{{ country.name }} [ {{ country.code }} ]</h2>
       <p>
         地域: {{ country.region }}
-        <br>
+        <br />
         面積: {{ country.surface_area }} km^2
-        <br>
+        <br />
         人口: {{ country.population }} 人
-        <br>
+        <br />
         平均寿命: {{ country.life_expectancy }} 年
-        <br>
+        <br />
       </p>
     </div>
     <div v-else>Country not found...</div>
@@ -22,7 +22,9 @@
       <div class="cities-container">
         <div v-for="city in cities" :key="city.name">
           <div class="city">
-            <router-link :to="'/city/' + city.name">{{ city.name }}</router-link>
+            <router-link :to="'/city/' + city.name">{{
+              city.name
+            }}</router-link>
           </div>
         </div>
       </div>
@@ -43,7 +45,7 @@ export default {
   mounted() {
     axios
       .get(
-        "http://150.95.157.67:10901/country/" + this.$route.params.countryName
+        "https://150.95.157.67:10901/country/" + this.$route.params.countryName
       )
       .then(response => {
         this.country = response.data.country;
@@ -53,7 +55,7 @@ export default {
       });
     axios
       .get(
-        "http://150.95.157.67:10901/citiesInCountry/" +
+        "https://150.95.157.67:10901/citiesInCountry/" +
           this.$route.params.countryName
       )
       .then(response => {
