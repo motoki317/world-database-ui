@@ -19,7 +19,7 @@ export default {
   },
   mounted() {
     const cityName = this.$route.params.cityName;
-    axios.get("https://150.95.157.67:10901/city/" + cityName).then(response => {
+    axios.get("/api/city/" + cityName).then(response => {
       this.cityInfo = response.data.city;
     });
   }

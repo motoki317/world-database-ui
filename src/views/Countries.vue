@@ -24,7 +24,7 @@ export default {
   mounted() {
     // ロード時に実行する関数
     axios
-      .get("https://150.95.157.67:10901/countries")
+      .get("/api/countries")
       .then(res => {
         this.countries = res.data.countries;
       })

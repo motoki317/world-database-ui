@@ -22,9 +22,9 @@
       <div class="cities-container">
         <div v-for="city in cities" :key="city.name">
           <div class="city">
-            <router-link :to="'/city/' + city.name">{{
-              city.name
-            }}</router-link>
+            <router-link :to="'/city/' + city.name">
+              {{ city.name }}
+            </router-link>
           </div>
         </div>
       </div>
@@ -44,9 +44,7 @@ export default {
   },
   mounted() {
     axios
-      .get(
-        "https://150.95.157.67:10901/country/" + this.$route.params.countryName
-      )
+      .get("/api/country/" + this.$route.params.countryName)
       .then(response => {
         this.country = response.data.country;
       })
@@ -54,10 +52,7 @@ export default {
         console.error(error);
       });
     axios
-      .get(
-        "https://150.95.157.67:10901/citiesInCountry/" +
-          this.$route.params.countryName
-      )
+      .get("/api/citiesInCountry/" + this.$route.params.countryName)
       .then(response => {
         this.cities = response.data.cities;
       })
